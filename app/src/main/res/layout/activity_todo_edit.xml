@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TodoEdit"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/newTask"
+        android:text="New Task"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:layout_margin="16dp"
+        android:textColor="?attr/colorOnSecondary"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTask"
+        android:text="Edit Task"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:layout_margin="16dp"
+        android:textColor="?attr/colorOnSecondary"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newTask"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTask"
+        android:id="@+id/linear1">
+
+        <EditText
+            android:id="@+id/edtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Title"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:textColor="?attr/colorOnSecondary"
+            android:textColorHint="#cccccc"
+            android:maxLength="20"
+            android:background="@drawable/edittextstyle"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:id="@+id/edtDesc"
+            android:hint="Desc"
+            android:textColorHint="#cccccc"
+            android:textColor="?attr/colorOnSecondary"
+            android:inputType="textMultiLine"
+            android:imeOptions="actionDone"
+            android:layout_marginBottom="10dp"
+            android:gravity="top"
+            android:background="@drawable/edittextstyle"/>
+
+        <Button
+            android:id="@+id/idBtnPickDate"
+            style="?android:spinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Date"
+            android:textAllCaps="false"
+            android:textColor="?attr/colorOnSecondary"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerCategory"
+            android:textColor="?attr/colorOnSecondary"
+            android:entries="@array/categoryList"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewTitle"
+            android:text="Title"
+            android:textSize="19dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="?attr/colorOnSecondary"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewDesc"
+            android:layout_marginBottom="10dp"
+            android:hint="Desc"
+            android:textColor="?attr/colorOnSecondary"
+            android:textColorHint="#cccccc"
+            android:background="@drawable/edittextstyle"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewCategory"
+            android:layout_marginBottom="10dp"
+            android:hint="Category"
+            android:textColor="?attr/colorOnSecondary"
+            android:textColorHint="#cccccc"
+            android:background="@drawable/edittextstyle"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewDate"
+            android:layout_marginBottom="10dp"
+            android:hint="Date"
+            android:textColor="?attr/colorOnSecondary"
+            android:textColorHint="#cccccc"
+            android:background="@drawable/edittextstyle"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
