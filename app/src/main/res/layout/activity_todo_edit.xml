@@ -117,49 +117,46 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linear1">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/viewTitle"
-                android:text="Title"
-                android:textSize="19sp"
-                android:textStyle="bold"
-                android:textColor="?attr/colorOnSecondary"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/viewCategory"
-                android:layout_marginBottom="10dp"
-                android:gravity="center"
-                android:text="Category"
-                android:textColor="?attr/colorOnSecondary"
-                android:layout_below="@id/viewTitle"/>
-
-        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewTitle"
+            android:text="Title"
+            android:textSize="19dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="?attr/colorOnSecondary"
+            android:layout_marginBottom="10dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/viewDesc"
+            android:layout_marginBottom="10dp"
             android:hint="Desc"
-            android:textSize="15sp"
             android:textColor="?attr/colorOnSecondary"
             android:textColorHint="#cccccc"
             android:background="@drawable/edittextstyle"/>
 
         <TextView
-            android:id="@+id/viewDate"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date"
-            android:textSize="15sp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"/>
+            android:id="@+id/viewCategory"
+            android:layout_marginBottom="10dp"
+            android:hint="Category"
+            android:textColor="?attr/colorOnSecondary"
+            android:textColorHint="#cccccc"
+            android:background="@drawable/edittextstyle"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewDate"
+            android:layout_marginBottom="10dp"
+            android:hint="Date"
+            android:textColor="?attr/colorOnSecondary"
+            android:textColorHint="#cccccc"
+            android:background="@drawable/edittextstyle"/>
 
     </LinearLayout>
 

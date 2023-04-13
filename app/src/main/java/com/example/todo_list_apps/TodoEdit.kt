@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
-import android.widget.Toast
 import com.example.todo_list_apps.databinding.ActivityTodoEditBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -92,50 +91,20 @@ class TodoEdit : AppCompatActivity() {
 
     private fun setupListener() {
         binding.btnSave.setOnClickListener {
-            val titleInput = binding.edtTitle.text.toString()
-            val descInput = binding.edtDesc.text.toString()
-            val dateInput = binding.idBtnPickDate.text.toString()
-            val categoryInput = binding.spinnerCategory.getItemAtPosition(binding.spinnerCategory.selectedItemPosition).toString()
-
-            if (titleInput.isEmpty() || descInput.isEmpty() || dateInput.isEmpty() || categoryInput.equals("Choose Category")) {
-                Toast.makeText(this, "Please fill all required fields", Toast.LENGTH_SHORT).show()
-            } else {
-                CoroutineScope(Dispatchers.IO).launch {
-                    db.todoDao().addTodo(
-                        MyTodo(
-                            0,
-                            titleInput,
-                            descInput,
-                            dateInput,
-                            categoryInput
-                        )
-                    )
-                    finish()
-                }
+            CoroutineScope(Dispatchers.IO).launch {
+                db.todoDao().addTodo(
+                    MyTodo(0, binding.edtTitle.text.toString(), binding.edtDesc.text.toString(), binding.idBtnPickDate.text.toString(), binding.spinnerCategory.selectedItem.toString())
+                )
+                finish()
             }
         }
 
         binding.btnUpdate.setOnClickListener {
-            val titleInput = binding.edtTitle.text.toString()
-            val descInput = binding.edtDesc.text.toString()
-            val dateInput = binding.idBtnPickDate.text.toString()
-            val categoryInput = binding.spinnerCategory.getItemAtPosition(binding.spinnerCategory.selectedItemPosition).toString()
-
-            if (titleInput.isEmpty() || descInput.isEmpty() || dateInput.isEmpty() || categoryInput.equals("Choose Category")) {
-                Toast.makeText(this, "Please fill all required fields", Toast.LENGTH_SHORT).show()
-            } else {
-                CoroutineScope(Dispatchers.IO).launch {
-                    db.todoDao().updateTodo(
-                        MyTodo(
-                            Id,
-                            titleInput,
-                            descInput,
-                            dateInput,
-                            categoryInput
-                        )
-                    )
-                    finish()
-                }
+            CoroutineScope(Dispatchers.IO).launch {
+                db.todoDao().updateTodo(
+                    MyTodo(Id, binding.edtTitle.text.toString(), binding.edtDesc.text.toString(), binding.idBtnPickDate.text.toString(), binding.spinnerCategory.selectedItem.toString())
+                )
+                finish()
             }
         }
     }
